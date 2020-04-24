@@ -10,7 +10,7 @@ from joblib import dump, load
 
 # Add a title
 st.title('Construction de classifieur à partir de données iris ')
-df = pd.read_csv('D:\Documents\Document2\Projets\quadra\streamlitAppli\iris.csv',sep=',')
+df = pd.read_csv("https://raw.githubusercontent.com/fermat01/Heroku-ml-iris/master/iris.csv")
 if st.checkbox('Show dataframe'):
     st.write(df)
     st.subheader('Scatter plot')
@@ -37,8 +37,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix
 from sklearn.svm import SVC
-jobSvm=load('D:\Documents\Document2\Projets\quadra\streamlitAppli\modelSvm.pkl')
-jobDtc=load('D:\Documents\Document2\Projets\quadra\streamlitAppli\modelDtc.pkl')
+jobSvm=load('https://raw.githubusercontent.com/fermat01/Heroku-ml-iris/blob/master/modelSvm.pkl')
+jobDtc=load('https://raw.githubusercontent.com/fermat01/Heroku-ml-iris/blob/master/modelDtc.pkl')
 features=df[['sepallength', 'sepalwidth', 'petallength', 'petalwidth']].values
 labels = df['class'].values
 X_train,X_test, y_train, y_test = train_test_split(features, labels, train_size=0.7, random_state=1)
