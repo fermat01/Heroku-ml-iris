@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix
 from sklearn.svm import SVC
-df = pd.read_csv('D:\Documents\Document2\Projets\quadra\streamlitAppli\iris.csv',sep=',')
+df = pd.read_csv("https://raw.githubusercontent.com/fermat01/Heroku-ml-iris/master/iris.csv")
 features=df[['sepallength', 'sepalwidth', 'petallength', 'petalwidth']].values
 labels = df['class'].values
 X_train,X_test, y_train, y_test = train_test_split(features, labels, train_size=0.7, random_state=1)
